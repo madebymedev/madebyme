@@ -32,6 +32,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://madebyme.dev/" />
+      </head>
       <body
         className={`relative ${geistSans.variable} ${geistMono.variable} ${quicksand.variable} antialiased text-white`}
       >

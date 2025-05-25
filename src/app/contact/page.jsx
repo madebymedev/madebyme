@@ -64,7 +64,7 @@ export default function ContactPage() {
 
             {/* Contact boxes */}
             <div className="flex flex-col items-center justify-center gap-8 mb-10 md:flex-row">
-                {[{ icon: <Mail />, label: 'Email', value: 'contact@madebyme.dev' },
+                {[{ icon: <Mail />, label: 'Email', value: 'madebyme.dev.contact@gmail.com' },
                 { icon: <Phone />, label: 'Phone', value: '+32 471 37 16 19' }].map(({ icon, label, value }) => (
                     <div key={label} className="group relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur overflow-hidden w-full max-w-sm">
                         <div className="absolute -inset-1 -z-10 rounded-2xl opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-40 group-hover:animate-gradient-glow bg-[conic-gradient(at_top_left,_#e8ded1,_#d1b5aa,_#ffa0bf,_#8866e9,_#fc766a)]"></div>

@@ -17,7 +17,7 @@ export default function PricingPage() {
   const plans = [
     {
       title: 'Starter',
-      price: '€250+',
+      price: '€300+',
       features: [
         '1–3 page static website',
         'Responsive design',

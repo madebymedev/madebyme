@@ -15,7 +15,7 @@ export default function AboutPage() {
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">About Me</h1>
 
       <p className="text-center text-lg max-w-2xl mx-auto mb-10 text-white/80">
-        I'm a developer based in Belgium with a passion for creating scalable solutions and building client dashboards. My mission is to empower others through technology, overcoming challenges with resilience and dedication.
+        I&apos;m a developer based in Belgium with a passion for creating scalable solutions and building client dashboards. My mission is to empower others through technology, overcoming challenges with resilience and dedication.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">

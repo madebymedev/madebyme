@@ -18,7 +18,7 @@ export default function PrimaryHeadline() {
           What I Do
         </h2>
         <p className="text-white/70 max-w-2xl leading-relaxed">
-          I'm a freelance website creator focused on <span className="text-[#e8ded1] font-medium">elegant UI</span>,
+          I&apos;m a freelance website creator focused on <span className="text-[#e8ded1] font-medium">elegant UI</span>,
           <span className="text-[#e8ded1] font-medium"> clean code</span>, and <span className="text-[#e8ded1] font-medium">unforgettable experiences</span>.
         </p>
       </div>

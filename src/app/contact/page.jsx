@@ -59,7 +59,7 @@ export default function ContactPage() {
         >
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Let’s Talk</h2>
             <p className="text-center text-white/70 mb-12">
-                If you're interested in what I offer, feel free to reach out to me!
+                If you&apos;re interested in what I offer, feel free to reach out to me!
             </p>
 
             {/* Contact boxes */}

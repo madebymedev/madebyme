@@ -20,12 +20,14 @@ const quicksand = Quicksand({
 });
 
 export const metadata = {
-  title: "Made by Me",
-  description: "Custom web development and premium client portals designed for performance and clarity — madebyme.dev.",
+  title: "Made by Me — Freelance Web Development",
+  description: "Elegant custom websites and client portals for creative businesses. Based in Antwerp. Built with clarity, performance, and purpose.",
+  keywords: ["freelance web developer", "custom client portal", "web design Antwerp", "madebyme.dev", "frontend developer Belgium"],
   icons: {
-    icon: '/favicon.ico'
-  }
+    icon: '/favicon.ico',
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://madebyme.dev
+
+# Sitemaps
+Sitemap: https://madebyme.dev/sitemap.xml

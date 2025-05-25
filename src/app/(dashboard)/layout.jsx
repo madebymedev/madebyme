@@ -8,6 +8,25 @@ import { LayoutDashboard, BarChart2, Settings, LogOut } from 'lucide-react'
 export default function DashboardLayout({ children }) {
     const router = useRouter()
     const [checkingSession, setCheckingSession] = useState(true)
+    const [profile, setProfile] = useState(null);
+
+    useEffect(() => {
+        supabase.auth.getSession().then(async ({ data }) => {
+            if (!data.session) {
+                router.push('/login');
+            } else {
+                const { data: profileData } = await supabase
+                    .from('client_profiles')
+                    .select('full_name, avatar_url')
+                    .eq('user_id', data.session.user.id)
+                    .single();
+
+                setProfile(profileData);
+                setCheckingSession(false);
+            }
+        });
+    }, []);
+
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data }) => {
@@ -26,8 +45,27 @@ export default function DashboardLayout({ children }) {
             <aside className="hidden md:flex flex-col bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-3xl shadow-xl mt-24 ml-6 w-64 h-[85vh]">
                 <div className="flex flex-col justify-between flex-1">
                     <div className="space-y-10">
-                        <h1 className="text-2xl font-bold">madebyme<span className="text-[#d1b5aa]">.dev</span></h1>
+                        {/* Profile Section */}
+                        {profile && (
+                            <div className="flex items-center gap-3 mb-4">
+                                <img
+                                    src={profile.avatar_url || '/default-avatar.png'}
+                                    alt="Avatar"
+                                    className="w-10 h-10 rounded-full object-cover border border-white/20"
+                                />
+                                <div>
+                                    <p className="text-sm font-semibold text-white">{profile.full_name}</p>
+                                    <p className="text-xs text-white/50">Client</p>
+                                </div>
+                            </div>
+                        )}
 
+                        {/* Logo */}
+                        <h1 className="text-2xl font-bold">
+                            madebyme<span className="text-[#d1b5aa]">.dev</span>
+                        </h1>
+
+                        {/* Navigation Links */}
                         <nav className="flex flex-col gap-4 text-white/80 text-sm">
                             <SidebarLink icon={<LayoutDashboard size={18} />} label="Dashboard" href="/dashboard" />
                             <SidebarLink icon={<BarChart2 size={18} />} label="Analytics" href="/analytics" />
@@ -37,8 +75,8 @@ export default function DashboardLayout({ children }) {
 
                     <button
                         onClick={async () => {
-                            await supabase.auth.signOut()
-                            router.push('/login')
+                            await supabase.auth.signOut();
+                            router.push('/login');
                         }}
                         className="flex items-center gap-2 text-red-400 hover:text-red-300 transition text-sm"
                     >
@@ -46,6 +84,7 @@ export default function DashboardLayout({ children }) {
                     </button>
                 </div>
             </aside>
+
 
 
 

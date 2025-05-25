@@ -34,14 +34,15 @@ export default function Navbar() {
         </div>
 
         <nav className="hidden md:flex space-x-6 text-sm font-medium text-white">
-          {['Home', 'About', 'Projects', 'Pricing'].map((item) => (
+          {['Home', 'About', 'Projects', 'Pricing', 'Lets Talk'].map((item) => (
             <a
               key={item}
               href={
                 item === 'About' ? '/about' :
-                  item === 'Home' ? '/' : // ✅ Corrected here
+                  item === 'Home' ? '/' : 
                     item === 'Pricing' ? '/pricing' :
                       item === 'Projects' ? '/projects' :
+                        item === 'Lets Talk' ? '/contact' :
                         `#${item.toLowerCase()}`
               }
               onClick={() => setIsOpen(false)}
@@ -54,12 +55,12 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="/contact"
+          href="/client-portal"
           className="hidden md:inline-block group relative px-5 py-2 rounded-full font-semibold text-sm text-white bg-white/10 backdrop-blur-[6px] border border-white/20 overflow-hidden shadow-md transition-all duration-300"
         >
           <span className="absolute inset-0 rounded-full pointer-events-none border border-transparent group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#e8ded1] before:via-[#d1b5aa] before:to-[#e8ded1] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-500 before:animate-border-gradient z-0"></span>
           <span className="relative z-10 group-hover:text-[#3a2f2b] transition-colors duration-300">
-            Let’s Talk
+            Client Portal
           </span>
         </a>
 
@@ -76,12 +77,13 @@ export default function Navbar() {
         ref={contentRef}
         className={`mt-4 flex flex-col items-center space-y-4 transition-all duration-500 ease-in-out md:hidden ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}
       >
-        {['Home', 'About', 'Projects', 'Pricing'].map((item) => {
+        {['Home', 'About', 'Projects', 'Pricing', 'Lets Talk'].map((item) => {
           const href =
             item === 'About' ? '/about' :
-              item === 'Home' ? '/' : // ✅ Corrected here
+              item === 'Home' ? '/' : //
                 item === 'Pricing' ? '/pricing' :
                   item === 'Projects' ? '/projects' :
+                    item === 'Lets Talk' ? '/contact' :
                     `#${item.toLowerCase()}`;
 
           const isAnchor = href.startsWith('#');
@@ -107,11 +109,11 @@ export default function Navbar() {
 
 
         <a
-          href="/contact"
+          href="/client-portal"
           onClick={() => setIsOpen(false)}
           className="mt-2 text-center px-4 py-2 rounded-full bg-[#e8ded1] text-[#3a2f2b] font-semibold text-sm hover:bg-[#d1b5aa] transition"
         >
-          Let’s Talk
+          Client Portal
         </a>
 
       </div>

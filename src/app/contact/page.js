@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 
@@ -8,6 +8,14 @@ export default function ContactPage() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [isClient, setIsClient] = useState(false)
+
+    useEffect(() => {
+            setIsClient(true)
+        }, [])
+
+        if (!isClient) return null
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();

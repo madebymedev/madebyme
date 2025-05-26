@@ -13,7 +13,7 @@ export default function ClientPortalIntroPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="mt-10 font-[Quicksand] flex items-center justify-center min-h-screen overflow-x-hidden px-4 py-12 sm:py-20 bg-gradient-to-br from-[#e8ded1]/10 via-[#d1b5aa]/10 to-[#3a2f2b]/10"
+            className="mt-10 font-[Quicksand] flex items-center justify-center min-h-screen overflow-x-hidden px-4 py-12 sm:py-20 "
         >
             <div className="max-w-4xl w-full mx-auto text-center backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-8 sm:p-10 shadow-xl relative">
                 <div className="absolute -inset-1 z-[-1] blur-2xl opacity-30 bg-[conic-gradient(at_top_left,_#e8ded1,_#d1b5aa,_#8866e9,_#ffa0bf,_#fc766a)] rounded-3xl" />
@@ -52,7 +52,7 @@ export default function ClientPortalIntroPage() {
 
                 <button
                     onClick={() => router.push('/login')}
-                    className="hidden md:inline-block group relative px-7 py-4 rounded-full font-semibold text-sm text-white bg-white/10 backdrop-blur-[6px] border border-white/20 overflow-hidden shadow-md transition-all duration-300"
+                    className="cursor-pointer inline-block group relative px-6 py-3 rounded-full font-semibold text-sm text-white bg-white/10 backdrop-blur-[6px] border border-white/20 overflow-hidden shadow-md transition-all duration-300"
                 >
                     <span className="absolute inset-0 rounded-full pointer-events-none border border-transparent group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#e8ded1] before:via-[#d1b5aa] before:to-[#e8ded1] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-500 before:animate-border-gradient z-0"></span>
                     <span className="text-lg relative z-10 group-hover:text-[#3a2f2b] transition-colors duration-300">

@@ -27,7 +27,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Button */}
-        <button className="relative group px-6 py-3 rounded-full font-semibold text-[#3a2f2b] bg-[#e8ded1] backdrop-blur-md overflow-hidden transition-all duration-300 border-[#1c1c1c] shadow-[0_0_40px_#ffffff33]">
+        <a href='/projects' className="relative group px-6 py-3 rounded-full font-semibold text-[#3a2f2b] bg-[#e8ded1] backdrop-blur-md overflow-hidden transition-all duration-300 border-[#1c1c1c] shadow-[0_0_40px_#ffffff33]">
           <span className="absolute inset-0 rounded-full bg-white blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 z-0"></span>
           <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#e8ded1] via-[#d1b5aa] to-[#e8ded1] bg-[length:200%_200%] animate-gradient-move transition-opacity duration-700 z-0"></span>
           <span className="absolute inset-0 before:absolute before:left-[-75%] before:top-0 before:h-full before:w-[150%] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:rounded-full before:animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></span>
@@ -67,7 +67,7 @@ export default function HeroSection() {
               animation: shimmer 2.5s ease-in-out infinite;
             }
           `}</style>
-        </button>
+        </a>
       </motion.div>
     </motion.section>
   );

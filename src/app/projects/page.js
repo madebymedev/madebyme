@@ -5,27 +5,27 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'Business Website',
-    description: 'A personal portfolio website showcasing my work.',
-    tech: ['React', 'Tailwind CSS', 'Next.js'],
+    description: 'A professional website for a car dealership, allowing users to browse available vehicles, get quotes, and schedule appointments for buying or selling cars.',
+    tech: ['React', 'Tailwind CSS', 'Next.js', 'Formspree'],
     image: '/projects/debrugautos.jpg',
   },
   {
     title: 'Laysah',
-    description: 'A fully-featured e-commerce platform for online sales.',
-    tech: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+    description: 'An elegant e-commerce platform for selling abayas, headscarves, and modest fashion essentials, featuring dynamic product listings, secure checkout, and real-time inventory management.',
+    tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Sanity', 'Supabase'],
     image: '/projects/laysah.jpg',
   },
   {
     title: 'Dashboard UI',
     description: 'An analytics dashboard with data visualizations.',
-    tech: ['React', 'Node.js', 'Express'],
-    image: '/projects/dashboard.png',
+    tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
+    image: '/projects/dashboard-ui.png',
   },
   {
     title: 'Task Management App',
     description: 'A task management app to track work progress.',
     tech: ['Vue', 'Firebase', 'Tailwind CSS'],
-    image: '/projects/taskapp.png',
+    image: '/projects/task.jpg',
   },
 ];
 

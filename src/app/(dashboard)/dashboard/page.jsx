@@ -19,7 +19,7 @@ import {
   Bar,
 } from 'recharts'
 
-const RANGE_OPTIONS = ['1d','7d' ,'30d', '90d']
+const RANGE_OPTIONS = ['day','7d' ,'30d']
 const COLORS = ['#e8ded1', '#d1b5aa', '#8866e9', '#ffa0bf', '#fc766a']
 
 export default function DashboardHome() {

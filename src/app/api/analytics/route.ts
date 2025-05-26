@@ -1,52 +1,65 @@
-export const dynamic = 'force-dynamic'
+// File: src/app/api/analytics/route.ts
+
 import { NextRequest, NextResponse } from 'next/server'
+
+const PLAUSIBLE_API_KEY = process.env.PLAUSIBLE_API_KEY
+const PLAUSIBLE_SITE_ID = process.env.PLAUSIBLE_SITE_ID
+const BASE_URL = 'https://plausible.io/api/v1'
 
 export async function GET(req: NextRequest) {
   try {
-    const apiKey = process.env.PLAUSIBLE_API_KEY
-    if (!apiKey) throw new Error('Missing PLAUSIBLE_API_KEY')
-
-    const site = 'demo-site-zeta-silk.vercel.app'
-    const period = req.nextUrl.searchParams.get('period') || '30d'
-
-    const headers = {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
+    const { searchParams } = new URL(req.url)
+    const period = searchParams.get('period') || '7d'
+    const validPeriods = ['day', '7d', '30d']
+    if (!validPeriods.includes(period)) {
+      return NextResponse.json({ error: 'Invalid period' }, { status: 400 })
     }
 
-    const [aggregateRes, timeseriesRes, countryRes] = await Promise.all([
-      fetch(`https://plausible.io/api/v1/stats/aggregate?site_id=${site}&period=${period}&metrics=visitors,pageviews,bounce_rate`, { headers }),
-      fetch(`https://plausible.io/api/v1/stats/timeseries?site_id=${site}&period=${period}&interval=day&metrics=visitors,pageviews,bounce_rate`, { headers }),
-      fetch(`https://plausible.io/api/v1/stats/breakdown?site_id=${site}&period=${period}&property=visit:country`, { headers }),
-    ])
+    const interval = period === '30d' ? 'month' : 'day'
 
-    if (!aggregateRes.ok || !timeseriesRes.ok || !countryRes.ok) {
-      const timeErr = await timeseriesRes.text()
-      console.error('🧨 Timeseries API failed:', timeErr)
+    // Fetch time series data
+    const timeseriesRes = await fetch(
+      `${BASE_URL}/stats/timeseries?site_id=${PLAUSIBLE_SITE_ID}&period=${period}&interval=${interval}&metrics=visitors,pageviews,bounce_rate`,
+      {
+        headers: {
+          Authorization: `Bearer ${PLAUSIBLE_API_KEY}`,
+        },
+      }
+    )
 
-      return NextResponse.json({ error: 'Failed to fetch analytics' }, { status: 500 })
+    if (!timeseriesRes.ok) {
+      const err = await timeseriesRes.text()
+      console.error('❌ Timeseries fetch failed:', err)
+      return NextResponse.json({ timeseries: [], countries: [] }, { status: 500 })
     }
 
+    const { results: timeseries } = await timeseriesRes.json()
 
-    const [aggregate, timeseries, countryBreakdown] = await Promise.all([
-      aggregateRes.json(),
-      timeseriesRes.json(),
-      countryRes.json(),
-    ])
+    // Fetch top countries
+    const countryRes = await fetch(
+      `${BASE_URL}/stats/breakdown?site_id=${PLAUSIBLE_SITE_ID}&period=${period}&property=visit:country&limit=5&metrics=visitors`,
+      {
+        headers: {
+          Authorization: `Bearer ${PLAUSIBLE_API_KEY}`,
+        },
+      }
+    )
 
-    return NextResponse.json({
-      stats: aggregate.results,
-      timeseries: timeseries.results,
-      countries: Array.isArray(countryBreakdown.results)
-        ? countryBreakdown.results.map(c => ({
-          country: c.country || 'Other',
-          visitors: c.visitors,
-        }))
-        : [],
-    })
+    let countries: { country: string; visitors: number }[] = []
+    if (countryRes.ok) {
+      const { results } = await countryRes.json()
+      countries = results.map((entry: any) => ({
+        country: entry.country,
+        visitors: entry.visitors,
+      }))
+    } else {
+      const err = await countryRes.text()
+      console.warn('⚠️ Country fetch failed:', err)
+    }
 
+    return NextResponse.json({ timeseries, countries })
   } catch (error) {
-    console.error('❌ Plausible API error:', error)
-    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+    console.error('❌ API error:', error)
+    return new Response('Internal Server Error', { status: 500 })
   }
 }

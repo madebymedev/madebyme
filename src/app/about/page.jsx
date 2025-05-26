@@ -8,7 +8,7 @@ export default function AboutPage() {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="font-[Quicksand] mt-10 relative z-10 py-24 px-6 max-w-5xl mx-auto text-[#fef7f1]"
     >

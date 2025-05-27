@@ -51,9 +51,10 @@ export default function WeatherAppPage() {
       )}
 
       <div className="relative z-10 py-16 px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
-          <span className="inline-flex items-center gap-5">
-            Weather Forecast <Haze className="w-13 h-13 text-white" />
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 flex justify-center">
+          <span className="inline-flex items-center gap-3">
+            Weather Forecast
+            <Haze className="w-10 h-10 text-white" />
           </span>
         </h1>
 

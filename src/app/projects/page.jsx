@@ -27,7 +27,16 @@ const projects = [
     tech: ['React', 'Tailwind CSS', 'OpenWeather API'],
     image: '/projects/weather.png',
     url: '/projects/weather-app',
+  },
+  {
+    title: 'Currency Converter',
+    description: 'A beautifully designed currency converter with real-time exchange rates using the Exchangerate.host API.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'ExchangeRate API'],
+    image: '/projects/currency-converter.png',
+    url: '/projects/currency-converter',
   }
+
+
 
 ];
 

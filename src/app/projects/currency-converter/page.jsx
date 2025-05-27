@@ -50,12 +50,13 @@ export default function CurrencyConverterPage() {
             <div className="absolute -inset-1 -z-10 blur-2xl opacity-30"></div>
 
             <div className="relative z-10 py-20 px-4 max-w-3xl mx-auto text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 flex justify-center">
-                    <span className="inline-flex items-center gap-3">
+                <h1 className="mb-8">
+                    <span className="inline-flex flex-wrap justify-center items-center gap-3 text-4xl md:text-5xl font-bold text-center">
                         Currency converter
                         <CandlestickChart className="w-10 h-10 text-white" />
                     </span>
                 </h1>
+
 
 
                 <ConverterForm

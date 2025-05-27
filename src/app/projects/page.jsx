@@ -16,12 +16,6 @@ const projects = [
     image: '/projects/laysah.jpg',
   },
   {
-    title: 'Dashboard UI',
-    description: 'An analytics dashboard with data visualizations.',
-    tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
-    image: '/projects/dashboard-ui.png',
-  },
-  {
     title: 'Weather App',
     description: 'A sleek weather app that shows real-time weather info using the OpenWeather API.',
     tech: ['React', 'Tailwind CSS', 'OpenWeather API'],
@@ -29,12 +23,26 @@ const projects = [
     url: '/projects/weather-app',
   },
   {
+    title: 'Dashboard UI',
+    description: 'An analytics dashboard with data visualizations.',
+    tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
+    image: '/projects/dashboard.jpg',
+  },
+  {
     title: 'Currency Converter',
     description: 'A beautifully designed currency converter with real-time exchange rates using the Exchangerate.host API.',
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'ExchangeRate API'],
     image: '/projects/currency-converter.png',
     url: '/projects/currency-converter',
+  },
+  {
+    title: 'Unit Converter',
+    description: 'An advanced unit converter with real-time math-based conversions across multiple categories including length, mass, volume, temperature, and speed.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion'],
+    image: '/projects/unit-converter.png',
+    url: '/projects/unit-converter',
   }
+
 
 
 

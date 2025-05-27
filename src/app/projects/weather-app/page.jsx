@@ -50,13 +50,14 @@ export default function WeatherAppPage() {
         <BackgroundImage condition={getBackgroundForWeather(weather.current.icon)} />
       )}
 
-      <div className="relative z-10 py-16 px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 flex justify-center">
-          <span className="inline-flex items-center gap-3">
+      <div className="relative z-10 py-16 px-4 max-w-4xl mx-auto text-center">
+        <h1 className="mb-8">
+          <span className="inline-flex flex-wrap justify-center items-center gap-3 text-4xl md:text-5xl font-bold text-center">
             Weather Forecast
             <Haze className="w-10 h-10 text-white" />
           </span>
         </h1>
+
 
 
         {/* Search */}

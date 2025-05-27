@@ -24,7 +24,7 @@ export const metadata = {
   description: "Elegant custom websites and client portals for creative businesses. Based in Antwerp. Built with clarity, performance, and purpose.",
   keywords: ["freelance web developer", "custom client portal", "web design Antwerp", "madebyme.dev", "frontend developer Belgium"],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/public/favicon.ico',
   },
 };
 

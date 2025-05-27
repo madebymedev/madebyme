@@ -19,7 +19,7 @@ export default function HeroSection() {
       >
         <p className="text-lg text-[#e8ded1]/80 mb-2">Hi, —</p>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 text-[#fef7f1] drop-shadow">
-          I build stunning, responsive websites<br className="hidden sm:block" />
+          I build stunning, responsive websites <br className="hidden sm:block" />
           that speak your brand’s language.
         </h1>
         <p className="text-lg sm:text-xl text-[#e8ded1]/70 font-medium mb-8">

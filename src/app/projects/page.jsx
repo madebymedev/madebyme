@@ -23,10 +23,11 @@ const projects = [
     url: '/projects/weather-app',
   },
   {
-    title: 'Dashboard UI',
-    description: 'An analytics dashboard with data visualizations.',
-    tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
-    image: '/projects/dashboard.jpg',
+    title: 'World Clock',
+    description: 'A sleek and responsive clock that displays the current time in any global time zone using the Luxon library.',
+    tech: ['React', 'Tailwind CSS', 'Luxon', 'Framer Motion'],
+    image: '/projects/world-clock.png',
+    url: '/projects/world-clock',
   },
   {
     title: 'Currency Converter',
@@ -41,10 +42,13 @@ const projects = [
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
     image: '/projects/unit-converter.png',
     url: '/projects/unit-converter',
+  },
+  {
+    title: 'Dashboard UI',
+    description: 'An analytics dashboard with data visualizations.',
+    tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
+    image: '/projects/dashboard.jpg',
   }
-
-
-
 
 ];
 

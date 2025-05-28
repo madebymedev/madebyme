@@ -8,12 +8,15 @@ const projects = [
     description: 'A professional website for a car dealership, allowing users to browse available vehicles, get quotes, and schedule appointments for buying or selling cars.',
     tech: ['React', 'Tailwind CSS', 'Next.js', 'Formspree'],
     image: '/projects/debrugautos.jpg',
+    url: '/projects/debrugautos',
   },
   {
     title: 'Laysah',
     description: 'An elegant e-commerce platform for selling abayas, headscarves, and modest fashion essentials, featuring dynamic product listings, secure checkout, and real-time inventory management.',
     tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Sanity', 'Supabase'],
     image: '/projects/laysah.jpg',
+    url: '/projects/laysah',
+
   },
   {
     title: 'Weather App',

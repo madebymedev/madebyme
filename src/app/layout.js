@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Quicksand } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import Navbar from "../../components/common/Navbar";
 import Footer from "../../components/common/Footer";
 import { Icon, icons } from "lucide-react";

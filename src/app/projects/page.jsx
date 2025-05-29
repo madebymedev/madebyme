@@ -47,12 +47,18 @@ const projects = [
     url: '/projects/unit-converter',
   },
   {
+    title: 'Calculator',
+    description: 'An elegant calculator app with advanced expression parsing, real-time computation, and a beautifully styled UI using Framer Motion and Tailwind CSS.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion'],
+    image: '/projects/calculator.png',
+    url: '/projects/calculator',
+  },
+  {
     title: 'Dashboard UI',
     description: 'An analytics dashboard with data visualizations.',
     tech: ['React', 'Typescript', 'Tailwind CSS', 'Supabase'],
     image: '/projects/dashboard.jpg',
   }
-
 ];
 
 export default function ProjectsPage() {
